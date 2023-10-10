@@ -1,0 +1,42 @@
+<!-- Наслідую все від base.html -->
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+{% for post in news %}
+    <div class="alert alert-light">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.text }}</p>
+        <!-- |date"j F Y, час: H:i:s --- фільтр jinja для дати-->
+        <span class="text-muted">Публікація: {{ post.date|date:"D d M Y" }}</span>
+        {% if post.avtor %}
+            <p><b>Автор:</b> <mark>{{ post.avtor }}</mark></p>
+        {% else %}
+            <p><b>Автор:</b> <mark>Адмін</mark></p>
+        {% endif %}
+    </div>
+{% endfor %}
+{% endblock %}
+
+{% block aside %}
+    <img src="https://www.filepicker.io/api/file/56HSrFc0SF6eyjrGXgVZ" class="img-thumbnail">
+    <p>Django - це потужний веб-фреймворк для Python, який надає інструменти для швидкої 
+    розробки безпечних і масштабованих веб-додатків з готовими компонентами для автентифікації, 
+    баз даних та шаблонів.</p>
+
+    <a href="https://www.djangoproject.com/" target="_blank">
+        <button class="btn btn-warning">Переглянути</button>
+    </a>
+
+    <img src="https://eduardovra.github.io/assets/img/flask-logo.png" class="img-thumbnail  mt-4">
+    <p>Flask - легкий Python фреймворк для веб-додатків з мінімальними вбудованими функціями. 
+    Ідеальний для розвитку малих та середніх проектів.</p>
+
+    <a href="https://flask.palletsprojects.com/en/3.0.x/" target="_blank">
+        <button class="btn btn-warning">Переглянути</button>
+    </a>
+{% endblock %}
