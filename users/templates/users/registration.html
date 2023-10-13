@@ -7,7 +7,7 @@
 {% block content %}
     <h1>{{ title }}</h1>
     <!-- Вивід форми Django (Users.views.register.form) -->
-    <form method="post">
+    <form method="post" class="form-registration">
         <!-- csrf_token Захист від міжсайтової підробки запитів -->
         {% csrf_token %}
         {{ form.as_p }}

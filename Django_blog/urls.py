@@ -7,5 +7,5 @@ urlpatterns = [
     # При переході на головну сторінку піключаємо файл (blog.urls.py)
     path('', include('blog.urls')),
     # Сторінка регістрації (users.views.register)
-    path('registration', usersViews.register)
+    path('registration', usersViews.register, name='registration')
 ]
