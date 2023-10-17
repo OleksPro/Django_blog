@@ -125,3 +125,6 @@ STATICFILES_DIRS = [BASE_DIR / "static"]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Переадресовує на головну сторінку після входу в особистий кабінет
+LOGIN_REDIRECT_URL = 'home'

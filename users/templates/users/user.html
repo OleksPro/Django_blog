@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+    Сторінка авторизації
+{% endblock %}
+
+{% block content %}
+    <h1>Сторінка авторизації</h1>
+    <!-- Вивід форми Django (Users.views.register.form) -->
+    <form method="post" class="form-registration auth">
+        <!-- csrf_token Захист від міжсайтової підробки запитів -->
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-outline-warning" type="submit">Вхід</button>
+    </form>
+
+{% endblock %}
+
+{% block aside %}
+    <h4>Цікаві статті</h4>
+    <img src="https://eduardovra.github.io/assets/img/flask-logo.png" class="img-thumbnail">
+    <p>Flask - легкий Python фреймворк для веб-додатків з мінімальними вбудованими функціями. 
+    Ідеальний для розвитку малих та середніх проектів.</p>
+
+    <a href="https://flask.palletsprojects.com/en/3.0.x/" target="_blank">
+        <button class="btn btn-warning">Переглянути</button>
+    </a>
+
+    <img src="https://www.filepicker.io/api/file/56HSrFc0SF6eyjrGXgVZ" class="img-thumbnail mt-4">
+    <p>Django - це потужний веб-фреймворк для Python, який надає інструменти для швидкої 
+    розробки безпечних і масштабованих веб-додатків з готовими компонентами для автентифікації, 
+    баз даних та шаблонів.</p>
+
+    <a href="https://www.djangoproject.com/" target="_blank">
+        <button class="btn btn-warning">Переглянути</button>
+    </a>
+{% endblock %}

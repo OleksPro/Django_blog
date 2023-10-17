@@ -10,6 +10,6 @@ urlpatterns = [
     # Сторінка регістрації (users.views.register)
     path('registration/', usersViews.register, name='registration'),
     # Використовуємо вбудовані класси django
-    path('user/',authViews.LoginView.as_view() , name='user'),
-    path('user/',authViews.LogoutView.as_view() , name='logout'),
+    path('user/',authViews.LoginView.as_view(template_name='users/user.html') , name='user'),
+    path('user/',authViews.LogoutView.as_view(template_name='users/exit.html') , name='logout'),
 ]
