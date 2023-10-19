@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from .forms import UserRegisterForm
 # Класс для виводу сповіщення
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 
 # Створюємо перехід на сторінку реєстрації
 def register(request):
@@ -29,3 +30,8 @@ def register(request):
             'form': form
         }
     )
+
+# Декоратор виконується до основної функції (перевірка чи авторизований користувач)
+@login_required
+def profile(request):
+    return render(request, 'users/profile.html')

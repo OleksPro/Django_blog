@@ -9,7 +9,9 @@ urlpatterns = [
     path('', include('blog.urls')),
     # Сторінка регістрації (users.views.register)
     path('registration/', usersViews.register, name='registration'),
+    path('profile/', usersViews.profile, name='profile'),
     # Використовуємо вбудовані класси django
     path('user/',authViews.LoginView.as_view(template_name='users/user.html') , name='user'),
-    path('user/',authViews.LogoutView.as_view(template_name='users/exit.html') , name='logout'),
+    path('exit/',authViews.LogoutView.as_view(template_name='users/exit.html') , name='exit'),
+    
 ]
