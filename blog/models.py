@@ -33,14 +33,7 @@ class News(models.Model):
 
     # Поле з вибором
     # shop_sizes = models.CharField(max_length=2, choices=sizes, default='S')
-
-
-
-
-
-
-
-
+    
     # Змінює назву поля в таблиці (така як і назва title)
     def __str__(self):
         return self.title

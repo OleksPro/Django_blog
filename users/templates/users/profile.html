@@ -6,8 +6,16 @@
 
 {% block content %}
     <h1>Особистий кабінет</h1>
-    <p>{{ user.username }}</p>
-    <p>{{ user.email }}</p>
+    <div class="d-flex text-body-secondary pt-3">
+        <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="64" height="64"
+        src="{{ user.profile.img.url }}">
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+            <strong class="d-block text-gray-dark">@{{ user.username }}</strong>
+            {% if user.email %}
+                <b>Email:</b> {{ user.email }}
+            {% endif %}
+        </p>
+    </div>
 {% endblock %}
 
 {% block aside %}
