@@ -11,13 +11,16 @@
     <div class="alert alert-light">
         <h3>{{ post.title }}</h3>
         <p>{{ post.text }}</p>
-        <!-- |date"j F Y, час: H:i:s --- фільтр jinja для дати-->
-        <span class="text-muted">Публікація: {{ post.date|date:"D d M Y" }}</span>
-        {% if post.avtor %}
-            <p><b>Автор:</b> <mark>{{ post.avtor }}</mark></p>
-        {% else %}
-            <p><b>Автор:</b> <mark>Адмін</mark></p>
-        {% endif %}
+        <div class="row align-items-start mt-2">
+            <div class="col-1">
+                <img src="{{ post.avtor.profile.img.url }}" alt="{{ post.avtor }}" class="user_image">
+            </div>
+            <div class="post-avtor col mt-2">
+                <!-- |date"j F Y, час: H:i:s --- фільтр jinja для дати-->
+                <span class="text-muted">Публікація: {{ post.date|date:"D d M Y" }}</span>
+                    <p><b>Автор:</b> <mark>{{ post.avtor }}</mark></p>
+            </div>
+        </div>
     </div>
 {% endfor %}
 {% endblock %}
