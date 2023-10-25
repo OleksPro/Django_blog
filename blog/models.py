@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # Свторює табличку в БД з ім'ям News
 class News(models.Model):
@@ -20,19 +21,9 @@ class News(models.Model):
     # Поле для цілих чисел
     views = models.IntegerField('Перегляди', default=1)
 
-    # Поле для дробних чисел
-    # views = models.FloatField('Перегляди', default=1)
-
-    # Варіанти вибору в полі ст.33
-    # sizes = (
-    #     ('S', 'Small'),
-    #     ('M', 'Medium'),
-    #     ('L', 'Large'),
-    #     ('XL', 'X Large'),
-    # )
-
-    # Поле з вибором
-    # shop_sizes = models.CharField(max_length=2, choices=sizes, default='S')
+    # Переадресовує користувача після публікації поста
+    def get_absolute_url(self):
+        return reverse('news-detail', kwargs={'pk': self.pk})
     
     # Змінює назву поля в таблиці (така як і назва title)
     def __str__(self):

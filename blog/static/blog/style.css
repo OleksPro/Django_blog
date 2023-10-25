@@ -22,3 +22,26 @@ footer {
 .post-avtor {
     padding-left: 30px;
 }
+
+.form-registration {
+    padding: 20px;
+    background: #fafafa;
+    border:  1px solid silver;
+    margin-top: 20px;
+}
+
+.form-registration .helptext {color: #b7b7b7;}
+
+.form-registration ul.errorlist {
+    color: #ca5858;
+    font-weight: bold;
+}
+
+.form-registration.auth input, textarea{
+    display: block;
+    width: 96%;
+    margin-top: 5px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    padding: 2px;
+}
