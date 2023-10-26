@@ -6,6 +6,8 @@
 {% endblock %}
 
 {% block content %}
+    <h2>Всі статті від автора {{ view.kwargs.username }}</h2>
+    <h4>Кількість: {{ page_obj.paginator.count }}</h4>
 {% for post in news %}
     <div class="alert alert-light">
         <h3>{{ post.title }}</h3>
