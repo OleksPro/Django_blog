@@ -1,3 +1,5 @@
 For using this repositori you need install next applications:
-pip install django
-pip install Pillow
+<ul>
+  <li><h6>pip install django</h6></li>
+  <li><h6>pip install Pillow</h6></li>
+</ul>
